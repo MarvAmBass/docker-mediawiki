@@ -22,6 +22,7 @@ RUN rm -rf /usr/share/nginx/html && tar xf media*tar.gz && rm media*tar.gz && mv
 # prepare for sqlite db
 RUN mkdir -p /usr/share/nginx/data; chmod a+w /usr/share/nginx/data/
 VOLUME /usr/share/nginx/data/
+VOLUME /uploads/
 
 ADD nginx-mediawiki.conf /etc/nginx/conf.d/nginx-mediawiki.conf
 

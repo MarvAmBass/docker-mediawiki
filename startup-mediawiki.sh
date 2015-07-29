@@ -6,6 +6,15 @@ ln -s /LocalSettings.php /usr/share/nginx/html/LocalSettings.php
 
 chmod a+rw -R /usr/share/nginx/data/
 
+if [ -d /uploads ]
+then
+  mv /usr/share/nginx/html/images/* /uploads/
+  rm -f /usr/share/nginx/html/images
+  chmod a+rwx -R /uploads
+  ln -s /uploads /usr/share/nginx/html/images
+fi
+
+
 if [ ! -z ${MEDIAWIKI_HSTS_HEADERS_ENABLE+x} ]
 then
   echo ">> HSTS Headers enabled"

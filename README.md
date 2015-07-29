@@ -38,7 +38,7 @@ You need to _--link_ your mysql container to marvambass/phpmyadmin
     -p 443:443 \
     --link mysql:mysql \
     -v /my/dbpath/:/usr/share/nginx/data/ \
-    -v /my/LocalSettings.php:/usr/share/nginx/html/LocalSettings.php \
+    -v /my/LocalSettings.php:/LocalSettings.php \
     --name mediawiki \
     marvambass/mediawiki
 

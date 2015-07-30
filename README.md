@@ -32,6 +32,8 @@ You can use SQLite or MySQL or Postgresql as a Database.
 
 So you might want to use a running MySQL Container (you could use: [marvambass/mysql](https://registry.hub.docker.com/u/marvambass/mysql/)).
 
+If you want a HTAccess protection, you just need to link in the htpasswd file to /htpasswd - after that the HTAccess protection will be enabled
+
 You need to _--link_ your mysql container to marvambass/phpmyadmin
 
     docker run -d \
@@ -40,6 +42,7 @@ You need to _--link_ your mysql container to marvambass/phpmyadmin
     -v /my/dbpath/:/usr/share/nginx/data/ \
     -v /my/uploads/:/uploads \
     -v /my/LocalSettings.php:/LocalSettings.php \
+    -v /my/htpasswd:/htpasswd \
     --name mediawiki \
     marvambass/mediawiki
 
